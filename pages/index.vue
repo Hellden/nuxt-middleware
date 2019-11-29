@@ -1,46 +1,30 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <card title="Free" icon="github-circle">
-        Open source on
-        <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
-      </card>
+  <div>
+    <form @submit.prevent="handleSubmit">
+      <label for="name" name="name">Nom</label>
+      <input id="name" name="name" type="text" />
 
-      <card title="Responsive" icon="cellphone-link">
-        <b class="has-text-grey">
-          Every
-        </b>
-        component is responsive
-      </card>
+      <label for="lastName" name="lastName">Prénom</label>
+      <input id="lastName" name="lastName" type="text" />
 
-      <card title="Modern" icon="alert-decagram">
-        Built with
-        <a href="https://vuejs.org/">
-          Vue.js
-        </a>
-        and
-        <a href="http://bulma.io/">
-          Bulma
-        </a>
-      </card>
-
-      <card title="Lightweight" icon="arrange-bring-to-front">
-        No other internal dependency
-      </card>
-    </div>
-  </section>
+      <label for="age" name="age">Age</label>
+      <input id="age" name="age" type="text" />
+      <button type="submit">Record</button>
+    </form>
+  </div>
 </template>
 
 <script>
-import Card from '~/components/Card'
+import WriteTest from '../test'
 
 export default {
-  name: 'HomePage',
-
-  components: {
-    Card
+  methods: {
+    handleSubmit() {
+      WriteTest.Write('coucou Jean')
+      console.log('Test message:', 'Coucou')
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped></style>
